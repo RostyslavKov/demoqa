@@ -5,6 +5,7 @@ export default class BasePage {
     readonly elementsCategory: Locator;
     readonly categoriesName: Locator;
     readonly bookStore: Locator;
+    readonly link: string;
 
     constructor(page:Page) {
         this.page = page;
@@ -27,5 +28,8 @@ export default class BasePage {
             categoriesActualNames.push(await iterator.innerText())
         }
         return categoriesActualNames;
+    }
+    async navigateTo(link) :Promise<void> {
+        await this.page.goto(link)
     }
 }

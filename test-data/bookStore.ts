@@ -1,0 +1,1 @@
+export const bookName:string = 'Speaking JavaScript';

@@ -1,10 +1,10 @@
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
 import BasePage from '../pages/basePage';
 import ElementsPage from '../pages/ElementsPage';
 import ButtonsPage from '../pages/ButtonsPage';
 import { buttonsURL } from '../test-data/buttons';
 import { baseURL, categoriesName } from '../test-data/basePage';
-import { beforeEach } from 'node:test';
+import { test } from '../src/fixtures/base_fixture';
 
 test.describe(async () => {
 
@@ -32,9 +32,7 @@ test.describe(async () => {
         await buttonsPage.checkClickMessageIsVisible();
     });
 
-    test('Check all categories', async ({ page }) => {
-
-        await page.goto(baseURL);
+    test('Check all categories', async ({ categoriesName }) => {
         const actualNames = await basePage.getAllCategories();
         expect(actualNames).toEqual(categoriesName);
     }); 
