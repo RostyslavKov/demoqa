@@ -1,7 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 import BasePage from "./basePage";
 
-export default class BookStorePage  extends BasePage {
+export default class BookStoreApplicationPage  extends BasePage {
     readonly page:Page;
     readonly btnLogin: Locator;
 

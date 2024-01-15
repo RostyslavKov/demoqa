@@ -16,15 +16,9 @@ export default class LoginPage extends BasePage {
 
     }
 
-
-    async enterUserName(userName) :Promise<void> {
-        await this.txtUserName.fill(userName);
-    }
-    async enterPassword(password) :Promise<void> {
-        await this.txtPassword.fill(password);
-    }
-    async clickOnBtnLogin() :Promise<void> {
+    async login(credentials:ICredentials) :Promise<void> {
+        await this.txtUserName.fill(credentials.username);
+        await this.txtPassword.fill(credentials.password);
         await this.btnLogin.click();
     }
-    
 }
